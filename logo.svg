@@ -1,7 +1,7 @@
 <svg version="1.1" id="carenest-logo" xmlns="http://www.w3.org/2000/svg" 
      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      viewBox="0 0 300 300" xml:space="preserve">
-  <!-- Tło z delikatnym kołem-->
+  <!-- Tło z delikatnym kołem -->
   <circle cx="150" cy="150" r="140" fill="#FDF6EC" stroke="#F1C40F" stroke-width="8"/>
   
   <!-- Stylizowane gniazdo -->
@@ -18,7 +18,8 @@
     <circle cx="8" cy="2" r="2"/>
   </g>
   
-  <g transform="translate(150,180)" fill="#F1C40F">
+  <!-- Centralna sylwetka – powiększona -->
+  <g transform="translate(150,180) scale(1.3)" fill="#F1C40F">
     <circle cx="0" cy="-10" r="5"/>
     <ellipse cx="0" cy="5" rx="7" ry="10"/>
     <circle cx="-8" cy="2" r="2"/>
@@ -32,3 +33,6 @@
     <circle cx="8" cy="2" r="2"/>
   </g>
 </svg>
+
+
+
