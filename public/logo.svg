@@ -5,10 +5,9 @@
   <circle cx="150" cy="150" r="140" fill="#FDF6EC" stroke="#F1C40F" stroke-width="8"/>
   
   <!-- Stylizowane gniazdo -->
-  <path d="M70,160 C110,110 190,110 230,160" fill="none" stroke="#F1C40F" stroke-width="12" stroke-linecap="round"/>
-  
+  <path d="M70,160 C110,110 190,110 230,160" transform="translate(0, -30)"  fill="none" stroke="#F1C40F" stroke-width="12" stroke-linecap="round"/>
   <!-- Sylwetki dzieci w gnieździe -->
-  <g transform="translate(110,175)" fill="#F1C40F">
+  <g transform="translate(90,175) scale(1.9)" fill="#F1C40F">
     <!-- Głowa -->
     <circle cx="0" cy="-10" r="5"/>
     <!-- Ciało -->
@@ -19,14 +18,14 @@
   </g>
   
   <!-- Centralna sylwetka – powiększona -->
-  <g transform="translate(150,180) scale(1.3)" fill="#F1C40F">
+  <g transform="translate(150,170) scale(2.7)" fill="#F1C40F">
     <circle cx="0" cy="-10" r="5"/>
     <ellipse cx="0" cy="5" rx="7" ry="10"/>
     <circle cx="-8" cy="2" r="2"/>
     <circle cx="8" cy="2" r="2"/>
   </g>
   
-  <g transform="translate(190,175)" fill="#F1C40F">
+  <g transform="translate(210,175) scale(1.9)" fill="#F1C40F">
     <circle cx="0" cy="-10" r="5"/>
     <ellipse cx="0" cy="5" rx="7" ry="10"/>
     <circle cx="-8" cy="2" r="2"/>
