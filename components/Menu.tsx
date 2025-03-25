@@ -5,10 +5,7 @@ import {
   IoUmbrellaOutline,
   IoPeopleOutline,
   IoTodayOutline,
-  IoChatboxEllipsesOutline,
-  IoNotificationsOutline,
   IoPersonCircleOutline,
-  IoSettingsOutline,
   IoLogOutOutline,
 } from "react-icons/io5";
 const menuItems = [
@@ -35,16 +32,6 @@ const menuItems = [
         label: "Events",
         href: "/events",
       },
-      {
-        icon: <IoChatboxEllipsesOutline className="menu-icon" />,
-        label: "Messages",
-        href: "/messages",
-      },
-      {
-        icon: <IoNotificationsOutline className="menu-icon" />,
-        label: "Announcements",
-        href: "/announcements",
-      },
     ],
   },
   {
@@ -54,11 +41,6 @@ const menuItems = [
         icon: <IoPersonCircleOutline className="menu-icon" />,
         label: "Profile",
         href: "/profile",
-      },
-      {
-        icon: <IoSettingsOutline className="menu-icon" />,
-        label: "Settings",
-        href: "/settings",
       },
       {
         icon: <IoLogOutOutline className="menu-icon" />,
@@ -73,14 +55,11 @@ export default function Menu() {
     <div className="mt-4 text-sm">
       {menuItems.map((menu) => (
         <div className="flex flex-col gap-2" key={menu.title}>
-          <span className="hidden lg:block text-white font-light py-2">
-            {menu.title}
-          </span>
+          <div className="mb-5"></div>
           {menu.items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              //   className="[&>.lucide]:size-[50px]"
               className="flex items-center justify-center lg:justify-start gap-2 text-white py-2 [&>.menu-icon]:size-[24px]"
             >
               {item.icon}
