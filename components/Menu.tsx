@@ -73,7 +73,7 @@ export default function Menu() {
     <div className="mt-4 text-sm">
       {menuItems.map((menu) => (
         <div className="flex flex-col gap-2" key={menu.title}>
-          <span className="hidden lg:block text-gray-400 font-light">
+          <span className="hidden lg:block text-white font-light py-2">
             {menu.title}
           </span>
           {menu.items.map((item) => (
@@ -81,7 +81,7 @@ export default function Menu() {
               key={item.href}
               href={item.href}
               //   className="[&>.lucide]:size-[50px]"
-              className="flex items-center justify-center lg:justify-start gap-2 text-gray-500 py-2 [&>.menu-icon]:size-[20px]"
+              className="flex items-center justify-center lg:justify-start gap-2 text-white py-2 [&>.menu-icon]:size-[24px]"
             >
               {item.icon}
               <p className="hidden lg:block">{item.label}</p>
