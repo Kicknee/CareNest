@@ -4,6 +4,9 @@
 @theme {
   --font-capriola: "Capriola";
   --font-arial: Arial, Helvetica, sans-serif;
+  --color-primary: #a08861;
+  --color-secondary: #cbbd9a;
+  --color-accent: #f4c971;
 }
 
 :root {
