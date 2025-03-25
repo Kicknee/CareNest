@@ -12,7 +12,7 @@ export default function DashboardLayout({
     <div className="flex justify-between h-screen max-w-[1300px] mx-auto">
       <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] bg-amber-100 p-3">
         <Link href="/" className="flex items-center lg:justify-start gap-2">
-          <Image src="logo.svg" alt="logo" width={53} height={53} />
+          <Image src="/logo_s.png" alt="logo" width={53} height={53} />
           <span className="hidden lg:block">CareNest</span>
         </Link>
         <Menu />
