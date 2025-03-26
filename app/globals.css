@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Capriola&display=swap");
+
 @import "tailwindcss";
 
 @theme {
@@ -7,6 +8,12 @@
   --color-primary: #a08861;
   --color-secondary: #cbbd9a;
   --color-accent: #f4c971;
+  --color-careSky: #c3ebfa;
+  --color-careSkyLight: #edf9fd;
+  --color-carePurple: #cfceff;
+  --color-carePurpleLight: #f1f0ff;
+  --color-careYellow: #fae27c;
+  --color-careYellowLight: #fefce8;
 }
 
 :root {
