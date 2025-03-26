@@ -60,10 +60,10 @@ export default function Menu() {
             <Link
               key={item.href}
               href={item.href}
-              className="flex items-center justify-center lg:justify-start gap-2 text-white py-2 [&>.menu-icon]:size-[24px]"
+              className="flex items-center justify-center lg:justify-start gap-2 text-white py-2 [&>.menu-icon]:size-[30px]"
             >
               {item.icon}
-              <p className="hidden lg:block">{item.label}</p>
+              <p className="hidden lg:block text-[18px]">{item.label}</p>
             </Link>
           ))}
         </div>
