@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CiStar } from "react-icons/ci";
+import { AiFillStar } from "react-icons/ai";
 
 export default function NannyCard() {
   return (
@@ -12,11 +12,11 @@ export default function NannyCard() {
         <p className="capitalize text-xs mt-1">PLN 35.00/hr</p>
       </div>
       <div className="flex text-xs font-semibold items-center gap-1">
-        <CiStar size={21} />
-        <CiStar size={21} />
-        <CiStar size={21} />
-        <CiStar size={21} />
-        <CiStar size={21} />
+        <AiFillStar size={20} className="text-accent" />
+        <AiFillStar size={20} className="text-accent" />
+        <AiFillStar size={20} className="text-accent" />
+        <AiFillStar size={20} className="text-gray-200" />
+        <AiFillStar size={20} className="text-gray-200" />
         (23)
       </div>
       <button className="rounded-4xl px-5 py-1.5 text-sm bg-accent text-white">
