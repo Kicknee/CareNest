@@ -33,8 +33,8 @@ export default function Home() {
         <Link href="/" className="text-5xl md:text-6xl">
           <h1>Carenest</h1>
         </Link>
-        <div className="text-2xl col-start-2 row-[2_/_span_1] flex items-end gap-1 justify-center">
-          <p className="text-[23px]">Find your nanny</p>
+        <div className="text-2xl col-start-2 row-[2_/_span_1] flex items-center gap-1 justify-center">
+          <p className="text-[80%]">Find your nanny</p>
           <IoMenu size={30} />
         </div>
         <nav className="hidden md:flex flex-1 justify-between items-center px-9">
@@ -80,7 +80,7 @@ export default function Home() {
         />
       </header>
 
-      <h5>Browser</h5>
+      <p className="mt-10 text-lg">Browser</p>
       <div className="flex flex-wrap gap-5 mt-3 justify-center w-screen">
         <NannyCard />
         <NannyCard />
