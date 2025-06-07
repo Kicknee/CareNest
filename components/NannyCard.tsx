@@ -3,15 +3,15 @@ import { AiFillStar } from "react-icons/ai";
 
 export default function NannyCard() {
   return (
-    <div className="bg-white rounded-2xl p-3 w-[170px] h-[270px] flex flex-col items-center justify-between text-black gap-2">
+    <div className="flex h-[270px] w-[170px] flex-col items-center justify-between gap-2 rounded-2xl bg-white p-3 text-black">
       <Image src="/logo_m.png" alt="Logo" width={75} height={75} />
       <p className="text-base font-semibold">Chido Asun</p>
-      <p className="capitalize text-sm">Warsaw</p>
+      <p className="text-sm capitalize">Warsaw</p>
       <div>
-        <p className="capitalize text-xs">{"Experience: >4 years"}</p>
-        <p className="capitalize text-xs mt-1">PLN 35.00/hr</p>
+        <p className="text-xs capitalize">{"Experience: >4 years"}</p>
+        <p className="mt-1 text-xs capitalize">PLN 35.00/hr</p>
       </div>
-      <div className="flex text-xs font-semibold items-center gap-1">
+      <div className="flex items-center gap-1 text-xs font-semibold">
         <AiFillStar size={20} className="text-accent" />
         <AiFillStar size={20} className="text-accent" />
         <AiFillStar size={20} className="text-accent" />
@@ -19,7 +19,7 @@ export default function NannyCard() {
         <AiFillStar size={20} className="text-gray-200" />
         (23)
       </div>
-      <button className="rounded-4xl px-5 py-1.5 text-sm bg-accent text-white">
+      <button className="bg-accent rounded-4xl px-5 py-1.5 text-sm text-white">
         Book Now
       </button>
     </div>

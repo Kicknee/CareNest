@@ -27,17 +27,17 @@ export default function Home() {
     },
   ];
   return (
-    <div className="text-3xl h-screen p-8 flex flex-col items-center text-white">
+    <div className="flex h-screen flex-col items-center p-8 text-3xl text-white">
       <header className="grid grid-cols-[1fr_2fr] grid-rows-[60px_30px_150px_45px]">
         <Image src="/logo_m.png" alt="Logo" width={90} height={90} />
         <Link href="/" className="text-5xl md:text-6xl">
           <h1>Carenest</h1>
         </Link>
-        <div className="text-2xl col-start-2 row-[2_/_span_1] flex items-center gap-1 justify-center">
+        <div className="col-start-2 row-[2_/_span_1] flex items-center justify-center gap-1 text-2xl">
           <p className="text-[80%]">Find your nanny</p>
           <IoMenu size={30} />
         </div>
-        <nav className="hidden md:flex flex-1 justify-between items-center px-9">
+        <nav className="hidden flex-1 items-center justify-between px-9 md:flex">
           {menuItems.map((item) => (
             <Link
               key={item.href}
@@ -49,12 +49,12 @@ export default function Home() {
           ))}
           <Link
             href="/sign-up"
-            className="py-2 px-7 bg-secondary rounded-[30px] text-xl"
+            className="bg-secondary rounded-[30px] px-7 py-2 text-xl"
           >
             Sign up
           </Link>
         </nav>
-        <button className="hidden row-3 col-2 self-center place-self-start rounded-4xl px-7 py-2 text-2xl bg-accent">
+        <button className="bg-accent col-2 row-3 hidden place-self-start self-center rounded-4xl px-7 py-2 text-2xl">
           Book Now
         </button>
         {/*searchbar*/}
@@ -63,9 +63,9 @@ export default function Home() {
           alt="bed icon"
           width={90}
           height={90}
-          className="row-[3_/_span_1] col-end-2 self-end"
+          className="col-end-2 row-[3_/_span_1] self-end"
         />
-        <div className="row-4 col-span-full self-end relative size-full bg-white rounded-4xl flex overflow-hidden">
+        <div className="relative col-span-full row-4 flex size-full self-end overflow-hidden rounded-4xl bg-white">
           <input type="text" className="w-[80%]" />
           <button className="bg-accent w-[20%] px-4">
             <IoSearch size={35} />
@@ -76,21 +76,18 @@ export default function Home() {
           width={90}
           height={90}
           alt="sun icon"
-          className="-z-3 absolute right-0 top-2/15"
+          className="absolute top-2/15 right-0 -z-3"
         />
       </header>
 
-      <p className="mt-10 text-lg">Browser</p>
-      <div className="flex flex-wrap gap-5 mt-3 justify-center w-screen">
+      <p className="mt-10 text-3xl">Browse</p>
+      <div className="mt-3 flex w-screen flex-wrap justify-center gap-5">
         <NannyCard />
         <NannyCard />
         <NannyCard />
         <NannyCard />
       </div>
-      <div
-        className="-z-10 fixed top-0 left-0 size-full bg-gradient-to-b from-primary to-50% to-secondary min-h-screen;
-"
-      ></div>
+      <div className="from-primary to-secondary min-h-screen; fixed top-0 left-0 -z-10 size-full bg-gradient-to-b to-50%"></div>
     </div>
   );
 }
