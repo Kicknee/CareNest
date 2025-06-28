@@ -99,7 +99,7 @@ export default function Home() {
       <section className="flex w-screen flex-col items-center">
         {/*tiles section */}
         <p className="my-10 text-3xl md:text-5xl">Browse</p>
-        <div className="mt-3 flex w-[80%] snap-x flex-wrap gap-5 overflow-scroll md:w-screen md:flex-nowrap md:justify-start md:px-5">
+        <div className="scrollbar no-scrollbar mt-3 flex w-full snap-x flex-wrap justify-center gap-5 overflow-scroll md:flex-nowrap md:justify-start">
           <div className="snap-start">
             <NannyCard />
           </div>
@@ -112,7 +112,6 @@ export default function Home() {
           <div className="snap-start">
             <NannyCard />
           </div>
-
           <div className="snap-start">
             <NannyCard />
           </div>
