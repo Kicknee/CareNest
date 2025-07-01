@@ -27,7 +27,7 @@ export default function Home() {
     },
   ];
   return (
-    <main className="flex w-full max-w-screen flex-col items-center p-8 text-3xl text-white">
+    <main className="mx-auto flex w-full max-w-screen flex-col items-center p-8 text-3xl text-white xl:w-[1200px]">
       <header className="flex w-full items-center justify-center gap-2 md:items-baseline md:justify-around">
         <div className="relative size-[90px] md:hidden">
           <Image src="/logo_m.png" alt="Logo" fill />
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex w-screen flex-col items-center">
+      <section className="flex w-full flex-col items-center">
         {/*tiles section */}
         <p className="my-10 text-3xl md:text-5xl">Browse</p>
         <div className="scrollbar no-scrollbar mt-3 flex w-[99%] snap-x flex-wrap justify-center gap-5 overflow-scroll md:flex-nowrap md:justify-start">
@@ -126,7 +126,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="from-primary to-secondary min-h-screen; fixed top-0 left-0 -z-10 size-full bg-gradient-to-b to-50%"></div>
     </main>
   );
 }

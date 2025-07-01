@@ -10,16 +10,16 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex h-screen max-w-[1300px] mx-auto">
-      <div className="w-[16%] md:w-[10%] lg:w-[16%] xl:w-[14%] bg-secondary p-3 text-white">
-        <Link href="/" className="flex items-center lg:justify-start gap-2">
+    <div className="mx-auto flex h-screen max-w-[1300px] bg-white">
+      <div className="bg-secondary w-[16%] p-3 text-white md:w-[10%] lg:w-[16%] xl:w-[14%]">
+        <Link href="/" className="flex items-center gap-2 lg:justify-start">
           <Image src="/logo_s.png" alt="logo" width={53} height={53} />
-          <span className="hidden lg:block text-[21px]">Carenest</span>
+          <span className="hidden text-[21px] lg:block">Carenest</span>
         </Link>
         <Menu />
       </div>
 
-      <div className="w-[84%] md:w-[90%] lg:w-[84%] xl:w-[86%] overflow-y-scroll ">
+      <div className="w-[84%] overflow-y-scroll md:w-[90%] lg:w-[84%] xl:w-[86%]">
         <Navbar />
         {children}
       </div>
