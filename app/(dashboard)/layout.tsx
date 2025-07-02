@@ -10,11 +10,13 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="mx-auto flex h-screen max-w-[1300px] bg-white">
-      <div className="bg-secondary w-[16%] p-3 text-white md:w-[10%] lg:w-[16%] xl:w-[14%]">
+    <div className="mx-auto flex h-screen max-w-[1300px] bg-gray-100 text-gray-800">
+      <div className="bg-secondary w-[16%] p-3 md:w-[10%] lg:w-[16%] xl:w-[14%]">
         <Link href="/" className="flex items-center gap-2 lg:justify-start">
           <Image src="/logo_s.png" alt="logo" width={53} height={53} />
-          <span className="hidden text-[21px] lg:block">Carenest</span>
+          <span className="hidden text-[21px] text-white lg:block">
+            Carenest
+          </span>
         </Link>
         <Menu />
       </div>

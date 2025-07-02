@@ -9,7 +9,7 @@ export default function Navbar() {
           <span className="text-lg">John Doe</span>
           <span className="text-xs text-gray-500">Admin</span>
         </div>
-        <IoPersonCircleOutline className="size-[41px] text-accent" />
+        <IoPersonCircleOutline className="text-accent size-[41px]" />
       </div>
     </div>
   );
