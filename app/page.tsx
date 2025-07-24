@@ -1,7 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { IoMenu, IoSearch } from "react-icons/io5";
+import {
+  IoMenu,
+  IoSearch,
+  IoArrowBackCircleOutline,
+  IoArrowForwardCircleOutline,
+} from "react-icons/io5";
 import NannyCard from "@/components/NannyCard";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
   const menuItems = [
@@ -26,6 +34,61 @@ export default function Home() {
       href: "/log-in",
     },
   ];
+
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const leftArrowRef = useRef<HTMLButtonElement | null>(null);
+  const rightArrowRef = useRef<HTMLButtonElement | null>(null);
+
+  const scrollAmount = 270;
+
+  const scrollLeft = () => {
+    scrollContainerRef.current?.scrollBy({
+      left: -scrollAmount,
+      behavior: "smooth",
+    });
+  };
+  const scrollRight = () => {
+    scrollContainerRef.current?.scrollBy({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+
+    const firstCardObserver = new IntersectionObserver(
+      (entries) => {
+        const firstCard = entries[0];
+        if (!leftArrowRef.current) return;
+        leftArrowRef.current.classList.toggle(
+          "opacity-0",
+          firstCard.isIntersecting,
+        );
+      },
+      {
+        threshold: 1,
+      },
+    );
+    const lastCardObserver = new IntersectionObserver(
+      (entries) => {
+        const lastCard = entries[0];
+        if (!rightArrowRef.current) return;
+        rightArrowRef.current.classList.toggle(
+          "opacity-0",
+          lastCard.isIntersecting,
+        );
+      },
+      {
+        threshold: 1,
+      },
+    );
+
+    firstCardObserver.observe(el.children[0]);
+    lastCardObserver.observe(el.lastElementChild as HTMLDivElement);
+  }, []);
+
   return (
     <main className="mx-auto flex w-full max-w-screen flex-col items-center p-8 text-3xl text-white xl:w-[1200px]">
       <header className="flex w-full items-center justify-center gap-2 md:items-baseline md:justify-around">
@@ -99,31 +162,50 @@ export default function Home() {
       <section className="flex w-full flex-col items-center">
         {/*tiles section */}
         <p className="my-10 text-3xl md:text-5xl">Browse</p>
-        <div className="scrollbar no-scrollbar mt-3 flex w-[99%] snap-x flex-wrap justify-center gap-5 overflow-scroll md:flex-nowrap md:justify-start">
-          <div className="snap-start">
-            <NannyCard />
+        <div className="flex w-full justify-center gap-3 md:justify-between">
+          <button
+            onClick={scrollLeft}
+            ref={leftArrowRef}
+            className="hidden cursor-pointer self-center transition-opacity duration-700 md:block"
+          >
+            <IoArrowBackCircleOutline className="text-default text-6xl" />
+          </button>
+          <div
+            ref={scrollContainerRef}
+            className="scrollbar no-scrollbar mt-3 flex w-[90%] snap-x flex-wrap gap-5 overflow-scroll md:flex-nowrap"
+          >
+            <div className="snap-start">
+              <NannyCard />
+            </div>
+            <div className="snap-start">
+              <NannyCard />
+            </div>
+            <div className="snap-start">
+              <NannyCard />
+            </div>
+            <div className="snap-start">
+              <NannyCard />
+            </div>
+            <div className="snap-start">
+              <NannyCard />
+            </div>
+            <div className="snap-start">
+              <NannyCard />
+            </div>
+            <div className="snap-start">
+              <NannyCard />
+            </div>
+            <div className="snap-start">
+              <NannyCard />
+            </div>
           </div>
-          <div className="snap-start">
-            <NannyCard />
-          </div>
-          <div className="snap-start">
-            <NannyCard />
-          </div>
-          <div className="snap-start">
-            <NannyCard />
-          </div>
-          <div className="snap-start">
-            <NannyCard />
-          </div>
-          <div className="snap-start">
-            <NannyCard />
-          </div>
-          <div className="snap-start">
-            <NannyCard />
-          </div>
-          <div className="snap-start">
-            <NannyCard />
-          </div>
+          <button
+            onClick={scrollRight}
+            ref={rightArrowRef}
+            className="hidden cursor-pointer self-center transition-opacity duration-700 md:block"
+          >
+            <IoArrowForwardCircleOutline className="text-default text-6xl" />
+          </button>
         </div>
       </section>
     </main>
