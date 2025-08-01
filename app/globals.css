@@ -31,3 +31,24 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+/* Falling rain animation */
+@keyframes fall {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  70% {
+    transform: translateY(365px) scale(1);
+  }
+  100% {
+    transform: translateY(365px) scale(0);
+  }
+}
+
+/* Apply animation using custom property */
+.animate-fall {
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: calc(55s / var(--i));
+}
