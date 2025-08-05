@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   IoHomeOutline,
   IoUmbrellaOutline,
-  IoPeopleOutline,
   IoTodayOutline,
   IoPersonCircleOutline,
   IoLogOutOutline,
