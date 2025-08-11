@@ -21,11 +21,6 @@ const menuItems = [
         label: "Babysitters",
         href: "/babysitters",
       },
-      // {
-      //   icon: <IoPeopleOutline className="menu-icon" />,
-      //   label: "Parents",
-      //   href: "/parents",
-      // },
       {
         icon: <IoTodayOutline className="menu-icon" />,
         label: "Events",
