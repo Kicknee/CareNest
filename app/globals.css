@@ -41,7 +41,7 @@
     transform: translateY(365px) scale(1);
   }
   100% {
-    transform: translateY(365px) scale(0);
+    transform: translateY(380px) scale(0);
   }
 }
 
