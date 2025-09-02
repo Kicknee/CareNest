@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { AiFillStar } from "react-icons/ai";
 
-export default function NannyCard() {
+type TypeCard = "book" | "preview";
+
+export default function NannyCard({ type }: { type: TypeCard }) {
   return (
     <div className="flex h-[270px] w-[170px] flex-col items-center justify-between gap-2 rounded-2xl bg-white p-3 text-black md:h-[360px] md:w-[230px]">
       <div className="relative size-[75px] md:size-[95px]">
@@ -23,9 +25,11 @@ export default function NannyCard() {
         <AiFillStar size={20} className="text-gray-200" />
         (23)
       </div>
-      <button className="bg-accent rounded-4xl px-5 py-1.5 text-sm text-white md:px-6 md:py-2">
-        Book Now
-      </button>
+      {type === "book" && (
+        <button className="bg-accent rounded-4xl px-5 py-1.5 text-sm text-white md:px-6 md:py-2">
+          Book Now
+        </button>
+      )}
     </div>
   );
 }

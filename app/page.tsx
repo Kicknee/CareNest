@@ -175,28 +175,28 @@ export default function Home() {
             className="scrollbar no-scrollbar mt-3 flex w-[90%] snap-x flex-wrap gap-5 overflow-scroll md:flex-nowrap"
           >
             <div className="snap-start">
-              <NannyCard />
+              <NannyCard type="book" />
             </div>
             <div className="snap-start">
-              <NannyCard />
+              <NannyCard type="book" />
             </div>
             <div className="snap-start">
-              <NannyCard />
+              <NannyCard type="book" />
             </div>
             <div className="snap-start">
-              <NannyCard />
+              <NannyCard type="book" />
             </div>
             <div className="snap-start">
-              <NannyCard />
+              <NannyCard type="book" />
             </div>
             <div className="snap-start">
-              <NannyCard />
+              <NannyCard type="book" />
             </div>
             <div className="snap-start">
-              <NannyCard />
+              <NannyCard type="book" />
             </div>
             <div className="snap-start">
-              <NannyCard />
+              <NannyCard type="book" />
             </div>
           </div>
           <button

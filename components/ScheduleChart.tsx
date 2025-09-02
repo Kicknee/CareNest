@@ -15,7 +15,7 @@ import {
 const data = [
   {
     name: "Jan",
-    amount: 4000,
+    amount: 3000,
   },
   {
     name: "Feb",

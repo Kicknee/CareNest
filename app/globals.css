@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Capriola&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Capriola&display=swap"); */
 
 @import "tailwindcss";
 
-@theme {
-  --font-capriola: "Capriola";
+@theme inline {
+  --font-capriola: var(--font-capriola);
   --font-arial: Arial, Helvetica, sans-serif;
   --color-primary: #a08861;
   --color-secondary: #cbbd9a;
@@ -15,10 +15,6 @@
   --color-carePurpleLight: #f1f0ff;
   --color-careYellow: #fae27c;
   --color-careYellowLight: #fefce8;
-}
-
-:root {
-  font-family: var(--font-capriola);
 }
 
 @layer utilities {
