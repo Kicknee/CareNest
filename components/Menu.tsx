@@ -1,12 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import {
-  IoHomeOutline,
-  IoUmbrellaOutline,
-  IoTodayOutline,
-  IoPersonCircleOutline,
-  IoLogOutOutline,
-} from "react-icons/io5";
+import { IoHomeOutline } from "react-icons/io5";
+import { LuUsers, LuUser, LuLogOut, LuSettings } from "react-icons/lu";
+
 const menuItems = [
   {
     title: "MENU",
@@ -17,14 +13,14 @@ const menuItems = [
         href: "/",
       },
       {
-        icon: <IoUmbrellaOutline className="menu-icon" />,
-        label: "Babysitters",
-        href: "/babysitters",
+        icon: <LuUsers className="menu-icon" />,
+        label: "Users",
+        href: "/users",
       },
       {
-        icon: <IoTodayOutline className="menu-icon" />,
-        label: "Events",
-        href: "/events",
+        icon: <LuUser className="menu-icon" />,
+        label: "Profile",
+        href: "/profile",
       },
     ],
   },
@@ -32,12 +28,12 @@ const menuItems = [
     title: "OTHER",
     items: [
       {
-        icon: <IoPersonCircleOutline className="menu-icon" />,
-        label: "Profile",
-        href: "/profile",
+        icon: <LuSettings className="menu-icon" />,
+        label: "Settings",
+        href: "/settings",
       },
       {
-        icon: <IoLogOutOutline className="menu-icon" />,
+        icon: <LuLogOut className="menu-icon" />,
         label: "Logout",
         href: "/logout",
       },
@@ -49,7 +45,9 @@ export default function Menu() {
     <div className="mt-4 text-sm">
       {menuItems.map((menu) => (
         <div className="flex flex-col gap-2" key={menu.title}>
-          <div className="mb-5"></div>
+          <span className="my-4 hidden text-[16px] font-light text-white lg:block">
+            {menu.title}
+          </span>
           {menu.items.map((item) => (
             <Link
               key={item.href}
@@ -57,7 +55,7 @@ export default function Menu() {
               className="flex items-center justify-center gap-2 py-2 text-white lg:justify-start [&>.menu-icon]:size-[30px]"
             >
               {item.icon}
-              <p className="hidden text-[18px] lg:block">{item.label}</p>
+              <p className="hidden text-[20px] lg:block">{item.label}</p>
             </Link>
           ))}
         </div>
