@@ -1,9 +1,7 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Capriola&display=swap"); */
-
 @import "tailwindcss";
 
 @theme inline {
-  --font-capriola: var(--font-capriola);
+  --font-capriola: var(--font-capriola), sans-serif;
   --font-arial: Arial, Helvetica, sans-serif;
   --color-primary: #a08861;
   --color-secondary: #cbbd9a;
