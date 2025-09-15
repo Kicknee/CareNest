@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Capriola } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const capriola = Capriola({
-  variable: "--font-capriola",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
   weight: "400",
 });
@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={capriola.variable}>
-      <body className="font-capriola antialiased">
+    <html lang="en">
+      <body className={`${montserrat.className} antialiased`}>
         <div className="from-primary to-secondary min-h-screen bg-gradient-to-b to-50%">
           {children}
         </div>

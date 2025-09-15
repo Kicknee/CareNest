@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-capriola: var(--font-capriola), sans-serif;
+  --font-montserrat: var(--font-montserrat), sans-serif;
   --font-arial: Arial, Helvetica, sans-serif;
   --color-primary: #a08861;
   --color-secondary: #cbbd9a;
