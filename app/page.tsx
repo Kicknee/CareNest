@@ -10,6 +10,7 @@ import {
 } from "react-icons/io5";
 import NannyCard from "@/components/NannyCard";
 import { useEffect, useRef } from "react";
+import SignInModal from "@/components/SignInModal";
 
 export default function Home() {
   const menuItems = [
@@ -91,6 +92,7 @@ export default function Home() {
 
   return (
     <main className="mx-auto flex w-full max-w-screen flex-col items-center p-8 text-3xl text-white xl:w-[1200px]">
+      <SignInModal />
       <header className="flex w-full items-center justify-center gap-2 md:items-baseline md:justify-around">
         <div className="relative size-[90px] md:hidden">
           <Image src="/logo_m.png" alt="Logo" fill />
