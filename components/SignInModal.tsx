@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function SignInModal() {
   return (
@@ -9,16 +10,32 @@ function SignInModal() {
           <span className="font-bold">family</span>
         </h1>
         <p className="text-sm">Log in or Sign up</p>
-        <div>
-          <div className="w-[ bg-white text-sm text-black">
-            Continue with Google
-          </div>
-          <div className="w-[ bg-white text-sm text-black">
-            Continue with Apple
-          </div>
-          <div className="w-[ bg-white text-sm text-black">
-            Continue with email
-          </div>
+        <div className="flex rounded-2xl bg-white px-1 py-2 text-sm text-black shadow-2xl">
+          <Image
+            src="/google-logo.png"
+            alt="Google icon"
+            width={24}
+            height={24}
+          />
+          Continue with Google
+        </div>
+        <div className="flex rounded-2xl bg-white px-1 py-2 text-sm text-black shadow-2xl">
+          <Image
+            src="/apple-logo.png"
+            alt="Apple icon"
+            width={24}
+            height={24}
+          />{" "}
+          Continue with Apple
+        </div>
+        <div className="flex rounded-2xl bg-white px-1 py-2 text-sm text-black shadow-2xl">
+          <Image
+            src="/mail-logo.png"
+            alt="Google icon"
+            width={24}
+            height={24}
+          />
+          Continue with email
         </div>
       </div>
     </div>
