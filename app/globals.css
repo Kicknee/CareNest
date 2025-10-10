@@ -44,5 +44,5 @@
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  /* animation-duration: calc(55s / var(--i)); */
+  animation-duration: calc(55s / var(--i));
 }
