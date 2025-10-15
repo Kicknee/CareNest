@@ -20,6 +20,13 @@ const loginOptions = [
 ];
 
 function SignInModal({ onClose }: { onClose: () => void }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
   return (
     <div className="bg-primary/77 fixed top-0 left-0 z-50 flex h-screen w-screen items-center justify-center backdrop-blur-sm">
       <div className="flex flex-col items-center gap-7 text-center">
