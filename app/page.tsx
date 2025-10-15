@@ -9,37 +9,36 @@ import {
   IoArrowForwardCircleOutline,
 } from "react-icons/io5";
 import NannyCard from "@/components/NannyCard";
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import SignInModal from "@/components/SignInModal";
 
+const menuItems = [
+  {
+    label: "Our Services",
+    href: "/our-services",
+  },
+  {
+    label: "Why Carenest",
+    href: "/parents",
+  },
+  {
+    label: "About",
+    href: "/about",
+  },
+  {
+    label: "Become a sitter",
+    href: "/become-a-sitter",
+  },
+  {
+    label: "Log in",
+    href: "/log-in",
+  },
+];
 export default function Home() {
-  const menuItems = [
-    {
-      label: "Our Services",
-      href: "/our-services",
-    },
-    {
-      label: "Why Carenest",
-      href: "/parents",
-    },
-    {
-      label: "About",
-      href: "/about",
-    },
-    {
-      label: "Become a sitter",
-      href: "/become-a-sitter",
-    },
-    {
-      label: "Log in",
-      href: "/log-in",
-    },
-  ];
-
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const leftArrowRef = useRef<HTMLButtonElement | null>(null);
   const rightArrowRef = useRef<HTMLButtonElement | null>(null);
-
+  const [showModal, setShowModal] = useState(true);
   const scrollAmount = 270;
 
   const scrollLeft = () => {
@@ -92,7 +91,7 @@ export default function Home() {
 
   return (
     <main className="mx-auto flex w-full max-w-screen flex-col items-center p-8 text-3xl text-white xl:w-[1200px]">
-      <SignInModal />
+      {showModal && <SignInModal onClose={() => setShowModal(false)} />}
       <header className="flex w-full items-center justify-center gap-2 md:items-baseline md:justify-around">
         <div className="relative size-[90px] md:hidden">
           <Image src="/logo_m.png" alt="Logo" fill />
@@ -117,12 +116,18 @@ export default function Home() {
               {item.label}
             </Link>
           ))}
-          <Link
+          <button
+            className="bg-secondary rounded-[30px] px-7 py-2 text-lg"
+            onClick={() => setShowModal(true)}
+          >
+            Sign up
+          </button>
+          {/* <Link
             href="/sign-up"
             className="bg-secondary rounded-[30px] px-7 py-2 text-lg"
           >
             Sign up
-          </Link>
+          </Link> */}
         </nav>
       </header>
       <section className="mt-10 grid w-full grid-cols-[1fr_2fr_1fr]">
@@ -174,7 +179,7 @@ export default function Home() {
           </button>
           <div
             ref={scrollContainerRef}
-            className="scrollbar no-scrollbar mt-3 flex w-[90%] snap-x flex-wrap gap-5 overflow-scroll md:flex-nowrap"
+            className="scrollbar no-scrollbar mt-3 flex w-[90%] snap-x flex-wrap items-center justify-center gap-5 overflow-scroll md:flex-nowrap md:justify-start"
           >
             <div className="snap-start">
               <NannyCard type="book" />
