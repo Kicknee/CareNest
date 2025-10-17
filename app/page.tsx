@@ -39,17 +39,17 @@ export default function Home() {
   const leftArrowRef = useRef<HTMLButtonElement | null>(null);
   const rightArrowRef = useRef<HTMLButtonElement | null>(null);
   const [showModal, setShowModal] = useState(true);
-  const scrollAmount = 270;
+  const SCROLL_OFFSET = 270;
 
   const scrollLeft = () => {
     scrollContainerRef.current?.scrollBy({
-      left: -scrollAmount,
+      left: -SCROLL_OFFSET,
       behavior: "smooth",
     });
   };
   const scrollRight = () => {
     scrollContainerRef.current?.scrollBy({
-      left: scrollAmount,
+      left: SCROLL_OFFSET,
       behavior: "smooth",
     });
   };
