@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuUsers, LuUser, LuLogOut, LuSettings } from "react-icons/lu";
+import { cn } from "@/app/lib/utils";
 
 const menuItems = [
   {
@@ -44,8 +45,13 @@ export default function Menu() {
   return (
     <div className="mt-4 text-sm">
       {menuItems.map((menu) => (
-        <div className="flex flex-col gap-2" key={menu.title}>
-          <span className="my-4 hidden text-[16px] font-light text-white lg:block">
+        <div className="flex flex-col gap-2 md:font-semibold" key={menu.title}>
+          <span
+            className={cn("my-4 text-[16px] text-transparent lg:text-white", {
+              "mt-[30px]": menu.title === "OTHER",
+              "md:mt-[100px]": menu.title === "OTHER",
+            })}
+          >
             {menu.title}
           </span>
           {menu.items.map((item) => (
