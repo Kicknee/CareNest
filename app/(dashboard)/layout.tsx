@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 import Menu from "@/components/Menu";
 import Navbar from "@/components/Navbar";
 
@@ -10,20 +9,14 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="mx-auto flex h-screen max-w-[1300px] bg-gray-100 text-gray-800">
-      <div className="bg-secondary w-[16%] p-3 md:w-[10%] lg:w-[16%] xl:w-[14%]">
-        <Link href="/" className="flex items-center gap-2 lg:justify-start">
-          <Image src="/logo_s.png" alt="logo" width={53} height={53} />
-          <span className="hidden text-[21px] text-white lg:block">
-            Carenest
-          </span>
-        </Link>
-        <Menu />
-      </div>
+    <div className="flex h-screen flex-col bg-gray-100 text-gray-800">
+      <Navbar />
 
-      <div className="w-[84%] overflow-y-scroll md:w-[90%] lg:w-[84%] xl:w-[86%]">
-        <Navbar />
-        {children}
+      <div className="mx-auto flex w-full max-w-[1300px] flex-1 overflow-hidden">
+        <aside className="bg-secondary /* STICKY tylko na dużych ekranach */ hidden w-[16%] overflow-y-auto p-3 sm:block md:w-[10%] lg:sticky lg:top-0 lg:h-[calc(100vh-64px)] lg:w-[16%] xl:w-[14%]">
+          <Menu />
+        </aside>
+        <main className="flex-1 overflow-auto p-4">{children}</main>
       </div>
     </div>
   );

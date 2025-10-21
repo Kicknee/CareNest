@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuUsers, LuUser, LuLogOut, LuSettings } from "react-icons/lu";
 import { cn } from "@/app/lib/utils";
