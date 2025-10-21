@@ -5,7 +5,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import { LuUsers, LuUser, LuLogOut, LuSettings } from "react-icons/lu";
 import { cn } from "@/app/lib/utils";
 
-const menuItems = [
+const sidebarItems = [
   {
     title: "MENU",
     items: [
@@ -42,23 +42,23 @@ const menuItems = [
     ],
   },
 ];
-export default function Menu() {
+export default function Sidebar() {
   return (
     <div className="mt-4 text-sm">
-      {menuItems.map((menu) => (
+      {sidebarItems.map((sidebarItem) => (
         <div
           className="flex w-full flex-col gap-2 md:font-semibold"
-          key={menu.title}
+          key={sidebarItem.title}
         >
           <span
             className={cn("my-4 text-[16px] text-transparent lg:text-white", {
-              "mt-[30px]": menu.title === "OTHER",
-              "md:mt-[100px]": menu.title === "OTHER",
+              "mt-[30px]": sidebarItem.title === "OTHER",
+              "md:mt-[100px]": sidebarItem.title === "OTHER",
             })}
           >
-            {menu.title}
+            {sidebarItem.title}
           </span>
-          {menu.items.map((item) => (
+          {sidebarItem.items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
