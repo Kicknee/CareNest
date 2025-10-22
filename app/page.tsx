@@ -38,7 +38,7 @@ export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const leftArrowRef = useRef<HTMLButtonElement | null>(null);
   const rightArrowRef = useRef<HTMLButtonElement | null>(null);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const SCROLL_OFFSET = 270;
 
   const scrollLeft = () => {
@@ -122,12 +122,6 @@ export default function Home() {
           >
             Sign up
           </button>
-          {/* <Link
-            href="/sign-up"
-            className="bg-secondary rounded-[30px] px-7 py-2 text-lg"
-          >
-            Sign up
-          </Link> */}
         </nav>
       </header>
       <section className="mt-10 grid w-full grid-cols-[1fr_2fr_1fr]">
