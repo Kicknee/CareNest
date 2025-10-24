@@ -3,7 +3,7 @@
 import React from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 
-const data = [
+const usersCount = [
   {
     name: "Total",
     uv: 172,
@@ -44,7 +44,7 @@ function CountUsersChart() {
             innerRadius="40%"
             outerRadius="100%"
             barSize={32}
-            data={data}
+            data={usersCount}
           >
             <RadialBar background dataKey="uv" />
           </RadialBarChart>
@@ -55,12 +55,12 @@ function CountUsersChart() {
       <div className="flex justify-center gap-16">
         <div>
           <div className="bg-carePurple h-5 w-5 rounded-full" />
-          <h1 className="font-bold">1,234</h1>
+          <h1 className="font-bold">1,235</h1>
           <h2 className="text-xs text-gray-300">Girls</h2>
         </div>
         <div>
           <div className="bg-careYellow h-5 w-5 rounded-full" />
-          <h1 className="font-bold">1,234</h1>
+          <h1 className="font-bold">1,235</h1>
           <h2 className="text-xs text-gray-300">Boys</h2>
         </div>
       </div>
