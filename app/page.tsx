@@ -41,15 +41,10 @@ export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const SCROLL_OFFSET = 270;
 
-  const scrollLeft = () => {
+  const scroll = (direction: "left" | "right") => {
+    const offset = direction === "left" ? -SCROLL_OFFSET : SCROLL_OFFSET;
     scrollContainerRef.current?.scrollBy({
-      left: -SCROLL_OFFSET,
-      behavior: "smooth",
-    });
-  };
-  const scrollRight = () => {
-    scrollContainerRef.current?.scrollBy({
-      left: SCROLL_OFFSET,
+      left: offset,
       behavior: "smooth",
     });
   };
@@ -165,7 +160,7 @@ export default function Home() {
         <p className="my-10 text-3xl md:text-5xl">Browse</p>
         <div className="flex w-full justify-center gap-3 md:justify-between">
           <button
-            onClick={scrollLeft}
+            onClick={() => scroll("left")}
             ref={leftArrowRef}
             className="hidden cursor-pointer self-center transition-opacity duration-700 md:block"
           >
@@ -201,7 +196,7 @@ export default function Home() {
             </div>
           </div>
           <button
-            onClick={scrollRight}
+            onClick={() => scroll("right")}
             ref={rightArrowRef}
             className="hidden cursor-pointer self-center transition-opacity duration-700 md:block"
           >
