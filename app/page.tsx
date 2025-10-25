@@ -34,12 +34,14 @@ const menuItems = [
     href: "/log-in",
   },
 ];
+
+const SCROLL_OFFSET = 270;
+
 export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const leftArrowRef = useRef<HTMLButtonElement | null>(null);
   const rightArrowRef = useRef<HTMLButtonElement | null>(null);
   const [showModal, setShowModal] = useState(false);
-  const SCROLL_OFFSET = 270;
 
   const scroll = (direction: "left" | "right") => {
     const offset = direction === "left" ? -SCROLL_OFFSET : SCROLL_OFFSET;
