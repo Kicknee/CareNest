@@ -9,7 +9,7 @@ import {
   IoArrowForwardCircleOutline,
 } from "react-icons/io5";
 import NannyCard from "@/components/NannyCard";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import SignInModal from "@/components/SignInModal";
 
 const menuItems = [
@@ -51,9 +51,12 @@ export default function Home() {
     });
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = scrollContainerRef.current;
     if (!el) return;
+
+    const firstCard = el.children[0];
+    const lastCard = el.lastElementChild;
 
     const firstCardObserver = new IntersectionObserver(
       (entries) => {
@@ -82,8 +85,17 @@ export default function Home() {
       },
     );
 
-    firstCardObserver.observe(el.children[0]);
-    lastCardObserver.observe(el.lastElementChild as HTMLDivElement);
+    if (firstCard && firstCard instanceof Element) {
+      firstCardObserver.observe(firstCard);
+    }
+    if (lastCard && lastCard instanceof Element) {
+      lastCardObserver.observe(firstCard);
+    }
+
+    return () => {
+      firstCardObserver.disconnect();
+      lastCardObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -172,7 +184,15 @@ export default function Home() {
             ref={scrollContainerRef}
             className="scrollbar no-scrollbar mt-3 flex w-[90%] snap-x flex-wrap items-center justify-center gap-5 overflow-scroll md:flex-nowrap md:justify-start"
           >
-            <div className="snap-start">
+            {new Array(5).map((nannyCard) => (
+              <div
+                key={Math.floor(Math.random() * 1000)}
+                className="snap-start"
+              >
+                <NannyCard type="book" />
+              </div>
+            ))}
+            {/* <div className="snap-start">
               <NannyCard type="book" />
             </div>
             <div className="snap-start">
@@ -195,7 +215,7 @@ export default function Home() {
             </div>
             <div className="snap-start">
               <NannyCard type="book" />
-            </div>
+            </div> */}
           </div>
           <button
             onClick={() => scroll("right")}
