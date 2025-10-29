@@ -192,18 +192,7 @@ export default function Home() {
                 <NannyCard type="book" />
               </div>
             ))}
-            {/* <div className="snap-start">
-              <NannyCard type="book" />
-            </div>
-            <div className="snap-start">
-              <NannyCard type="book" />
-            </div>
-            <div className="snap-start">
-              <NannyCard type="book" />
-            </div>
-            <div className="snap-start">
-              <NannyCard type="book" />
-            </div>
+            {/*
             <div className="snap-start">
               <NannyCard type="book" />
             </div>
